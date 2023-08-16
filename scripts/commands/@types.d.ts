@@ -1,7 +1,7 @@
 import { Player } from "@minecraft/server";
 import { Interaction } from "./Interaction";
-import { OptionTypes } from "./OptionTypes";
 import { FeedbackCode } from "./Feedback";
+import { OptionTypes } from "./optionTypes";
 export declare type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (k: infer I) => void ? I : never;
 export declare type DataType = "Command" | "Subcommand" | "Option";
 export declare type PermissionFunction = (sender: Player) => boolean;

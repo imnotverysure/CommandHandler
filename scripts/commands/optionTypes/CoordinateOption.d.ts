@@ -2,7 +2,7 @@ import { CoordinateTypeOption, ValidationResult } from "../@types";
 import { OptionType } from "./Abstract";
 export declare class CoordinateOption extends OptionType<CoordinateTypeOption> {
     name: "Coordinate";
-    protected _options: CoordinateTypeOption;
+    protected _options: Required<CoordinateTypeOption>;
     protected getMatches(value: any): {
         isCoordinate: boolean;
         isRelativeCoordinate: boolean;

@@ -8,7 +8,7 @@ This command handler allows the execution commands with dynamic arrangements of 
 
 ### **Getting Started**
 
-To create a custom command, the `commands` object must be imported from `/commands/index.js` inside of the scripts folder. The `commands` object is an instance of the `CommandManager` class which manages commands and handles their creation. To create a custom command, the `register()` method must be called with the command options as the argument provided.
+To create a custom command, the `commands` object must be imported from `/commands/index.js` inside of the scripts folder. The `commands` object is an instance of the `CommandManager` class which manages commands and handles their creation. The `register()` method must be called with the command options as the argument provided.
 
 ```js
 import { commands } from "./commands/index";
@@ -29,9 +29,7 @@ commands.register(
 
 Moreover, commands can have subcommands and options. Data within the command management are structured similar to a data tree with commands (`Command` objects) being the root, subcommands and options (`Subcommand` and `Option` objects) as the child, and so on as subcommands and options can be children of childrens. Subcommands can be executed by simply calling the name or an alias of the subcommand object, whilst options can only be executed by entering the required type of the option (NOTE: Entering incorrect type would throw an error to the user of the command).
 
-To add subcommands and options, one can simply defined the `subcommands` and `options` fields with an array of subcommand or option objects.
-
-Below is an example of a command with subcommands and options.
+To add subcommands and options, one can simply defined the `subcommands` and `options` fields with an array of subcommand or option objects. Below is an example of a command with subcommands and options.
 
 <br>
 

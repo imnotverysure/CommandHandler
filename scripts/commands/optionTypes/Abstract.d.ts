@@ -1,14 +1,16 @@
 import { CommandTypeOption, TypeOption, ValidationResult, ValueType } from "../@types";
+import { Option } from "../structures/Option";
 export declare class OptionType<T extends CommandTypeOption = TypeOption> {
     name: unknown;
+    /**
+     * Protected command option
+     */
+    protected _data: Option;
     /**
      * Protected type options of the command option
      */
     protected _options: T;
-    constructor(options: T);
-    protected getMatches(value: any): {
-        [K: string]: boolean;
-    };
+    constructor(data: Option, options: T);
     /**
      * The options of the command option type
      */

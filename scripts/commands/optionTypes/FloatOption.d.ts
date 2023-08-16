@@ -2,7 +2,7 @@ import { FloatTypeOption, ValidationResult } from "../@types";
 import { OptionType } from "./Abstract";
 export declare class FloatOption extends OptionType<FloatTypeOption> {
     name: "float";
-    protected _options: FloatTypeOption;
+    protected _options: Required<FloatTypeOption>;
     protected getMatches(value: any): {
         isFloat: boolean;
         isWithinRange: boolean;

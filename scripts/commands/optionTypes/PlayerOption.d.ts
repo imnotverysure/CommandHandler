@@ -3,7 +3,7 @@ import { PlayerTypeOption, ValidationResult } from "../@types";
 import { OptionType } from "./Abstract";
 export declare class PlayerOption extends OptionType<PlayerTypeOption> {
     name: "Player";
-    protected _options: PlayerTypeOption;
+    protected _options: Required<PlayerTypeOption>;
     protected getMatches(value: any): {
         readonly isPlayer: boolean;
         readonly isIdOfPlayer: boolean;
