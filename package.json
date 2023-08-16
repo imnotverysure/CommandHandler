@@ -1,0 +1,25 @@
+{
+    "name": "command-handler",
+    "version": "1.0.0",
+    "description": "A command handler that manages the creation and execution of custom commands with the utilization of the Scripting-API of Minecraft Bedrock Edition",
+    "type": "module",
+    "main": "./scripts/commands/index.js",
+    "types": "./scripts/commands/index.d.ts",
+    "dependencies": {
+        "@minecraft/server": "1.4.0-beta.1.20.10-stable"
+    },
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ylonn/CommandHandler.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ylonn/CommandHandler/issues"
+    },
+    "homepage": "https://github.com/ylonn/CommandHandler#README",
+    "keywords": [
+        "minecraft",
+        "bedrock",
+        "scripting-api"
+    ]
+}

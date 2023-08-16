@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Command Handler",
+        "description": "Manages the creation and execution of custom commands",
+        "uuid": "1f1b9e75-1c92-4d2e-b512-3902aac00f7c",
+        "version": [0, 0, 1],
+        "min_engine_version": [1, 19, 0]
+    },
+    "modules": [
+        {
+            "type": "script",
+            "language": "javascript",
+            "uuid": "44fa9140-d03a-46ce-bff2-1c1840c77688",
+            "version": [0, 0, 1],
+            "entry": "scripts/index.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.4.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-ui",
+            "version": "1.2.0-beta"
+        }
+    ]
+}
