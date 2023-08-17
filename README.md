@@ -29,7 +29,7 @@ commands.register(
 
 Moreover, commands can have subcommands and options. Data within the command management are structured similar to a data tree with commands (`Command` objects) being the root, subcommands and options (`Subcommand` and `Option` objects) as the child, and so on as subcommands and options can be children of childrens. Subcommands can be executed by simply calling the name or an alias of the subcommand object, whilst options can only be executed by entering the required type of the option (NOTE: Entering incorrect type would throw an error to the user of the command).
 
-To add subcommands and options, one can simply defined the `subcommands` and `options` fields with an array of subcommand or option objects. Below is an example of a command with subcommands and options.
+To add subcommands and options, one can simply define the `subcommands` and `options` fields with an array of subcommand or option objects. Below is an example of a command with subcommands and options.
 
 <br>
 
@@ -56,7 +56,7 @@ commands.register(
                             {
                                 name: "tag",
                                 description: "The tag to be added",
-                                type: { type: "string" }, // This is not required as "type" is set to type string by default
+                                type: { type: "string", length: [1, 255] },
                                 optional: false,
                             },
                         ],
@@ -68,6 +68,7 @@ commands.register(
                             {
                                 name: "tag",
                                 description: "The tag to be added",
+                                type: { type: "string", length: [1, 255] },
                                 optional: false,
                             },
                         ],
@@ -125,6 +126,7 @@ There currently are 6 command option types, namely: `string`, `int`, `float`, `b
 **Float**
 
 -   The `float` type accepts numbers even with floating point values, it also accepts stringified float data types. If `range` is specified, it will only accept values within the range values, and if `allowInt` is `true`, it will accept integer values or numbers with no floating point value.
+    > NOTE: Setting `allowInt` to `false` will cause the option to throw a command syntax error to the user if the numerical value provided is considered as an integer.
 
 **Boolean**
 
@@ -133,10 +135,12 @@ There currently are 6 command option types, namely: `string`, `int`, `float`, `b
 **Player**
 
 -   The `Player` type accepts either an instance of the `Player` class. If `allowName` is `true`, it accepts player names as well, and if `allowId` is `true`, it accepts player IDs.
+    > NOTE: Setting both `allowName` and `allowId` to `false` may result to an unusable option or an option where a user can not enter a player.
 
 **Coordinate**
 
 -   The `Coordinate` type accepts a number/coordinate point, or if `allowRelative` is `true`, accepts relative coordinates starting with "~".
+    > NOTE: `Coordinate` type only supports relative coordinates as coordinates with "^" may require a 3D vector (or a total of 3 `Coordinate` command options) in order to calculate the offset.
 
 <br>
 
