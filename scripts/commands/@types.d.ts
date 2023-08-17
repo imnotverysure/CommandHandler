@@ -134,25 +134,32 @@ export interface TypeOption<T extends CommandOptionTypeName = CommandOptionTypeN
 }
 export interface StringTypeOption extends TypeOption<"string"> {
     /**
-     * The length of the string from `min` (`length[0]`) to `max` (`length[1]`)
+     * The length of the string
      *
-     * NOTE: This is set to `[0, Infinity]` by default, and the `min` can not be lower than `0`
+     * NOTE:
+     * -    This is set to `[0, Infinity]` by default
+     * -    The range of the length does not need to be in an order from minimum to maximum
+     * -    Setting the minimum range to a value lower than 0 does nothing
      */
     length?: [number, number];
 }
 export interface IntTypeOption extends TypeOption<"int"> {
     /**
-     * The range of the value from `min` (`range[0]`) to `max` (`range[1]`)
+     * The range of the value
      *
-     * NOTE: This is set to `[-Infinity, Infinity]` by default
+     * NOTE:
+     * -    This is set to `[-Infinity, Infinity]` by default
+     * -    The range does not need to be in an order from minimum to maximum
      */
     range?: [number, number];
 }
 export interface FloatTypeOption extends TypeOption<"float"> {
     /**
-     * The range of the value from `min` (`range[0]`) to `max` (`range[1]`)
+     * The range of the value
      *
-     * NOTE: This is set to `[-Infinity, Infinity]` by default
+     * NOTE:
+     * -    This is set to `[-Infinity, Infinity]` by default
+     * -    The range does not need to be in an order from minimum to maximum
      */
     range?: [number, number];
     /**
