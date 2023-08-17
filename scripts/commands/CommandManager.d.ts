@@ -4,10 +4,15 @@ import { Interaction } from "./Interaction";
 export declare class CommandManager {
     #private;
     /**
+     * Protected prefix of custom commands
+     */
+    protected _prefix: string;
+    constructor();
+    /**
      * The prefix of custom commands
      */
-    prefix: string;
-    constructor();
+    get prefix(): string;
+    set prefix(prefix: string);
     /**
      * Registers a command with the provided options
      * @param command The options of the command to be created

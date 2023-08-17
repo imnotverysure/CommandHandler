@@ -2,13 +2,13 @@
 
 A command handler which manages the creation and execution of custom commands with the utilization of the Scripting-API of Minecraft Bedrock Edition.
 
-This command handler allows the execution commands with dynamic arrangements of subcommands and options.
+This command handler allows the execution of commands with dynamic arrangements of subcommands and options.
 
 <br>
 
 ### **Getting Started**
 
-To create a custom command, the `commands` object must be imported from `/commands/index.js` inside of the scripts folder. The `commands` object is an instance of the `CommandManager` class which manages commands and handles their creation. The `register()` method must be called with the command options as the argument provided.
+To create a custom command, the `commands` object must be imported from `/commands/index` (inside of the `scripts` directory). The `commands` object is an instance of the `CommandManager` class which manages commands and handles their creation and execution. The `register()` method must be called with the command options as the argument provided.
 
 ```js
 import { commands } from "./commands/index";
@@ -146,10 +146,12 @@ There currently are 6 command option types, namely: `string`, `int`, `float`, `b
 
 ### **Command Manager**
 
-The command handler has a built-in command manager which is the `commands` object. The `commands` object has a built-in `help` command for users to utilize in order to retrieve information regarding the commands they need. The default command prefix of the command manager is `-` which can be changed by setting the `prefix` property of the manager.
+The command handler has a built-in command manager which is the `commands` object and has a built-in `help` command for users to utilize in order to retrieve information regarding the commands they need. The default command prefix of the command manager is `-` which can be changed by setting the `prefix` property of the manager.
 
 ```js
 import { commands } from "./commands/index";
 
-commands.prefix = "./"; // Changes the command prefix to "./"
+// Change the command prefix to "./"
+// NOTE: The prefix can only be a string, setting to a value that is not of type string will throw an error
+commands.prefix = "./";
 ```
