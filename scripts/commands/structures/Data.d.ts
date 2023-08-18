@@ -50,10 +50,7 @@ export declare abstract class Data {
      * Returns the usages that matches the permission of the data with the user
      * @param user The user of the data
      */
-    generateUsages(user: Player): RawUsage[][] | {
-        permissions: PermissionFunction;
-        usage: string;
-    }[][];
+    generateUsages(user: Player): RawUsage[][];
     protected convertSubcommands(subcommands: (ISubcommand | SubcommandOptions)[], _Data?: typeof Subcommand): Subcommand[];
     protected convertOptions(options: (IOption | OptionOptions)[], _Data?: typeof Option): Option[];
 }
