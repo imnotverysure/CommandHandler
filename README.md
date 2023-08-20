@@ -1,10 +1,6 @@
 # **Command Handler**
 
-A command handler which manages the creation and execution of custom commands with the utilization of the Scripting-API of Minecraft Bedrock Edition.
-
-This command handler allows the execution of commands with dynamic arrangements of subcommands and options.
-
-<br>
+A command handler which manages the creation and execution of custom commands with the utilization of the Scripting-API of Minecraft Bedrock Edition. This command handler allows the execution of commands with dynamic arrangements of subcommands and options.
 
 ### **Getting Started**
 
@@ -117,29 +113,30 @@ There currently are 6 command option types, namely: `string`, `int`, `float`, `b
 
 **String**
 
--   The `string` type only accepts strings, stringified non-string data types are not considered as a string. Example of stringified non-string data types are `"true"`, `".5"`, `"{}"`, `"124"`, etc. If `length` is specified, it will only accept string values with the length that is within the range of the provided length.
+-   The `string` type only accepts strings. Stringified non-string data types are not considered as values of type string. Example of stringified non-string data types are `"true"`, `".5"`, `"{}"`, `"124"`, `"3.14"`, etc. If `length` is specified, it will only accept string values with the length that is within the range of the provided length.
+    > NOTE: Since `ChatSendBeforeEvent.message` is of type string, every argument entered will be either a string or a stringified non-string data type (even without quotation marks). Entering non-string data types to the chat input surrounded by quotation marks converts them to a string.
 
 **Int**
 
--   The `int` type only accepts numbers with no floating point values, it also accepts stringified int data types. If `range` is specified, it will only accept the values within the range values.
+-   The `int` type only accepts numbers with no floating point values. If `range` is specified, it will only accept the values within the range values. (Applies to stringified int data types)
 
 **Float**
 
--   The `float` type accepts numbers even with floating point values, it also accepts stringified float data types. If `range` is specified, it will only accept values within the range values, and if `allowInt` is `true`, it will accept integer values or numbers with no floating point value.
-    > NOTE: Setting `allowInt` to `false` will cause the option to throw a command syntax error to the user if the numerical value provided is considered as an integer.
+-   The `float` type accepts numbers with floating point values. If `range` is specified, it will only accept values within the range values, and if `allowInt` is `true`, it will accept integer values or numbers with no floating point value. (Applies to stringified float data types)
+    > NOTE: Setting `allowInt` to `false` will cause the option to throw a command syntax error to the user if the numerical value provided is considered an integer.
 
 **Boolean**
 
--   The `boolean` type only accepts the values `true` and `false`, it also accepts stringified boolean data types.
+-   The `boolean` type only accepts the values `true` and `false`. (Applies to stringified boolean data types)
 
 **Player**
 
--   The `Player` type accepts either an instance of the `Player` class. If `allowName` is `true`, it accepts player names as well, and if `allowId` is `true`, it accepts player IDs.
-    > NOTE: Setting both `allowName` and `allowId` to `false` may result to an unusable option or an option where a user can not enter a player.
+-   The `Player` type has two type options, `allowName` and `allowId`. The type accepts player names if the option `allowName` is set to `true`, and the same goes for player IDs if `allowId` is set to `true`.
+    > NOTE: Setting both `allowName` and `allowId` to `false` may result to a technically unusable option or an option where a user can not enter a player value.
 
 **Coordinate**
 
--   The `Coordinate` type accepts a number/coordinate point, or if `allowRelative` is `true`, accepts relative coordinates starting with "~".
+-   The `Coordinate` type accepts a number/coordinate point. It will accept relative coordinates starting with "~" if the option `allowRelative` is set to `true`.
     > NOTE: `Coordinate` type only supports relative coordinates as coordinates with "^" may require a 3D vector (or a total of 3 `Coordinate` command options) in order to calculate the offset.
 
 <br>
