@@ -17,7 +17,7 @@ export declare abstract class Data {
      */
     isKey(key: string): boolean;
     /**
-     * Returns the keys of the command\
+     * Returns the keys of the command
      */
     keys(): string[];
     /**
