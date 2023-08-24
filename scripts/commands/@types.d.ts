@@ -38,6 +38,8 @@ export interface DataOptions {
     options?: OptionOptions[];
 }
 export declare type CommandCallback = (data: Interaction) => void;
+export interface OverwriteCommandOptions extends Partial<CommandOptions> {
+}
 export interface ICommand extends Readonly<Required<CommandOptions>> {
 }
 export interface CommandOptions extends Omit<DataOptions, "depth"> {
