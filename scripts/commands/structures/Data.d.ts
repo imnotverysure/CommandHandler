@@ -15,7 +15,7 @@ export declare abstract class Data {
      * Checks whether the given key is a key of the command
      * @returns Returns `true` if the key provided is a key of the command, otherwise `false`
      */
-    isKey(key: string): boolean;
+    isKey(key: string, strict?: boolean): boolean;
     /**
      * Returns the keys of the command
      */
