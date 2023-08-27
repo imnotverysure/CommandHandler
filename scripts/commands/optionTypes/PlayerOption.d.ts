@@ -6,8 +6,8 @@ export declare class PlayerOption extends OptionType<PlayerTypeOption> {
     protected _options: Required<PlayerTypeOption>;
     protected getMatches(value: any): {
         isPlayer: boolean;
-        isIdOfPlayer: boolean;
-        isNameOfPlayer: boolean;
+        isPlayerId: boolean;
+        isPlayerName: boolean;
     };
     verify(value: any): boolean;
     validate(value: any): ValidationResult;

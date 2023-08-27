@@ -6,6 +6,7 @@ export declare class Interaction {
     protected _interactionString: string;
     protected _manager: CommandManager;
     protected _options: InteractionOptionResolver;
+    protected _arguments: string[];
     constructor(sender: Player, manager: CommandManager, interactionString: string);
     /**
      * The sender of the interaction string
