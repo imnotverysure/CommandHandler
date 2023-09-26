@@ -2,7 +2,7 @@ import { IntTypeOption, ValidationResult } from "../@types";
 import { OptionType } from "./Abstract";
 export declare class IntOption extends OptionType<IntTypeOption> {
     name: "int";
-    protected _options: Required<IntTypeOption>;
+    protected __options: Required<IntTypeOption>;
     protected getMatches(value: any): {
         isInt: boolean;
         isWithinRange: boolean;
